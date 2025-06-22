@@ -1,7 +1,7 @@
 ARG BASE_IMAGE=fragsoc/steamcmd-wine-xvfb
 FROM rustagainshell/rash:1.0.0 AS rash
 FROM ${BASE_IMAGE} AS vanilla
-MAINTAINER Laura Demkowicz-Duffy <fragsoc@yusu.org>
+LABEL maintainer= "Laura Demkowicz-Duffy <fragsoc@yusu.org>"
 
 USER root
 WORKDIR /
