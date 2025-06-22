@@ -1,7 +1,7 @@
 sv_maxplayers {{ get_env(name="MAX_PLAYERS", default="4") }};
 steam_lobby_max_members {{ get_env(name="MAX_PLAYERS", default="4") }};
 
-steam_server_heartbeat_enabled 1;
+steam_server_heartbeat_enabled {{ get_env(name="STEAM_HEARTBEAT", default="1") }};
 
 sv_hostname "{{ get_env(name="GAME_NAME", default="A dockerised Risk of Rain 2 Server") }}";
 sv_port {{ get_env(name="GAME_PORT", default="27015") }};
