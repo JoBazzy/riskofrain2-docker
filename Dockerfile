@@ -53,7 +53,7 @@ WORKDIR $INSTALL_LOC
 ENTRYPOINT ["rash", "/docker-entrypoint.rh"]
 
 # Temporary container to download mod files with curl and unzip them
-FROM debian:stretch-slim AS curl
+FROM FROM debian:bullseye-slim AS curl
 
 RUN apt-get update && \
     apt-get install -y unzip curl
