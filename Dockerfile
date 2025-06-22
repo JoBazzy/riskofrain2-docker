@@ -7,7 +7,7 @@ USER root
 WORKDIR /
 RUN DEBIAN_FRONTEND=noninteractive \
     apt-get update && \
-    apt-get install -y lib32gcc-s1
+    apt-get install -y libgcc1
 
 ARG UID=54433
 ARG GID=54433
