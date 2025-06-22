@@ -9,17 +9,15 @@ RUN DEBIAN_FRONTEND=noninteractive \
     apt-get update && \
     apt-get install -y lib32gcc-s1
 
-ARG UID=999
-ARG GID=999
+ARG UID=54433
+ARG GID=54433
 
 ENV INSTALL_LOC="/ror2"
 ENV HOME=${INSTALL_LOC}
 
 RUN mkdir -p $INSTALL_LOC && \
-    groupadd -g $GID ror2 && \
-    useradd -m -s /bin/false -u $UID -g $GID ror2 && \
-    # Setup directory structure and permissions
-    mkdir -p $INSTALL_LOC && \
+    if ! getent group $GID >/dev/null; then groupadd -g $GID ror2; else groupadd ror2; fi && \
+    if ! getent passwd $UID >/dev/null; then useradd -m -s /bin/false -u $UID -g $GID ror2; else useradd -m -s /bin/false -g $GID ror2; fi && \
     chown -R ror2:ror2 $INSTALL_LOC
 
 USER ror2
