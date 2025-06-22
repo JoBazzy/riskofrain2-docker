@@ -7,8 +7,8 @@ USER root
 WORKDIR /
 RUN DEBIAN_FRONTEND=noninteractive \
     apt-get update && \
-    apt-get install -y libgcc1
-
+    apt-get install -y libgcc1 xauth
+    
 ARG UID=54433
 ARG GID=54433
 
