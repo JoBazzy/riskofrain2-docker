@@ -13,7 +13,7 @@
 
 A [docker](https://www.docker.com/) image for running a dedicated server for the game [Risk of Rain 2](https://www.riskofrain.com/).
 Several modding frameworks can be optionally baked in.
-# DOES NOT WORK DEVS DONT UPDATE ROR2 SERVER BINARY 
+# Devs do not give us the server binary anymore / project dead
 # Usage
 
 ### Quickstart
